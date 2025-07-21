@@ -1,44 +1,47 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './App.css'
-import Landing from './pages/Landing'
-import Dashboard from './pages/Dashboard'
-import Auth from './pages/Auth'
-import Redirect from './pages/Redirect'
-import Link from './pages/Link'
-import AppLayout from './layouts/AppLayout'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import Landing from "./pages/landing";
+import Dashboard from "./pages/dashboard";
+import Auth from "./pages/auth";
+import Redirect from "./pages/redirect-link";
+import Link from "./pages/link";
+import AppLayout from "./layouts/app-layout";
+import UrlProvider from "./context";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
     children: [
       {
-        path: '/',
-        element: <Landing />
+        path: "/",
+        element: <Landing />,
       },
       {
-        path: '/dashboard',
-        element: <Dashboard />
+        path: "/dashboard",
+        element: <Dashboard />,
       },
       {
-        path: '/auth',
-        element: <Auth />
+        path: "/auth",
+        element: <Auth />,
       },
       {
-        path: '/:id',
-        element: <Redirect />
+        path: "/:id",
+        element: <Redirect />,
       },
       {
-        path: '/link/:id',
-        element: <Link />
+        path: "/link/:id",
+        element: <Link />,
       },
-    ]
-  }
-])
+    ],
+  },
+]);
 
 const App = () => {
   return (
-    <RouterProvider router={router}/>
-  )
-}
+    <UrlProvider>
+      <RouterProvider router={router} />
+    </UrlProvider>
+  );
+};
 
-export default App
+export default App;
