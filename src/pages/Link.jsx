@@ -76,11 +76,11 @@ const LinkPage = () => {
             {url?.title}
           </span>
           <a
-            href={`https://trimrr.netlify.app/${link}`}
+            href={`https://trimmrlink.netlify.app/${link}`}
             target="_blank"
             className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
-            https://trimrr.netlify.app/{link}
+            https://trimmrlink.netlify.app/{link}
           </a>
           <a
             href={url?.original_url}
@@ -97,7 +97,7 @@ const LinkPage = () => {
             <Button
               variant="ghost"
               onClick={() =>
-                navigator.clipboard.writeText(`https://trimrr.netlify.app/${link}`)
+                navigator.clipboard.writeText(`https://trimmrlink.netlify.app/${link}`)
               }
             >
               <Copy />
